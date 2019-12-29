@@ -1,0 +1,34 @@
+.deck {
+  background-color: #1a1a1d;
+  width: 100%;
+  text-align: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+}
+
+.card-chat {
+  height: 100vh;
+}
+
+.card-display-text {
+  background-color: #1a1a1d !important;
+  color: white;
+}
+
+.chat-header {
+  background: #2979ff !important;
+  height: 5%;
+}
+
+.chat-input {
+  display: absolute !important;
+  bottom: 0;
+}
+
+.chat-body {
+  background-color: ghostwhite;
+}

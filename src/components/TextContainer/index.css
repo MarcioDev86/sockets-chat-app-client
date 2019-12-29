@@ -1,0 +1,14 @@
+.created-with {
+  color: tomato;
+}
+
+.line {
+  color: white;
+  border: solid 1px;
+}
+
+@media (min-width: 320px) and (max-width: 1200px) {
+  .text-container {
+    display: none;
+  }
+}
