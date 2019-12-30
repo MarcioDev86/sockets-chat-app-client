@@ -14,14 +14,9 @@
   height: 100vh;
 }
 
-.card-display-text {
-  background-color: #1a1a1d !important;
-  color: white;
-}
-
 .chat-header {
   background: #2979ff !important;
-  height: 5%;
+  height: 10%;
 }
 
 .chat-input {
@@ -31,4 +26,15 @@
 
 .chat-body {
   background-color: ghostwhite;
+}
+
+.card-display-text {
+  background-color: #1a1a1d !important;
+  color: white;
+}
+
+@media only screen and (max-width: 600px) {
+  .card-display-text {
+    display: none;
+  }
 }
