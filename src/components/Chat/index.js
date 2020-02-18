@@ -17,7 +17,7 @@ export default function Chat(props) {
   const [users, setUsers] = useState("");
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([]);
-  const END_POINT = "localhost:5000"; // server port
+  const END_POINT = process.env.SERVER_ENDPOINT || "localhost:5000"; // server port
   const history = useHistory();
 
   useEffect(() => {
@@ -92,76 +92,3 @@ export default function Chat(props) {
     </CardDeck>
   );
 }
-
-/**
- * const [name, setName] = useState("");
-  const [room, setRoom] = useState("");
-  const [users, setUsers] = useState("");
-  const [message, setMessage] = useState("");
-  const [messages, setMessages] = useState([]);
-  const END_POINT = "localhost:5000"; // server port
-  const history = useHistory();
-
-  useEffect(() => {
-    const { name, room } = queryString.parse(props.location.search);
-    socket = io(END_POINT);
-
-    setName(name);
-    setRoom(room);
-
-    socket.emit("join", { name, room }, error => {
-      if (error) {
-        alert(error);
-        history.push("/");
-      }
-    });
-
-    return () => {
-      socket.emit("disconnect");
-      socket.off();
-      //goBackHome();
-    };
-
-    // eslint-disable-next-line
-  }, [END_POINT, props.location.search]);
-
-  useEffect(() => {
-    socket.on("message", message => {
-      setMessages([...messages, message]);
-    });
-
-    socket.on("roomData", ({ users }) => {
-      setUsers(users);
-    });
-
-    return () => {
-      socket.emit("disconnect");
-      socket.off();
-    };
-  }, [messages]);
-
-  // function for sending messages
-  const sendMessage = e => {
-    e.preventDefault();
-
-    if (message) {
-      socket.emit("sendMessage", message, () => setMessage(""));
-    }
-  };
-
-  return (
-    <div className="outerContainer">
-      <div className="container">
-        <InfoBar room={room} />
-        <Messages messages={messages} name={name} />
-        <Input
-          message={message}
-          setMessage={setMessage}
-          sendMessage={sendMessage}
-        />
-      </div>
-
-      <TextContainer users={users} />
-    </div>
-  );
- */
