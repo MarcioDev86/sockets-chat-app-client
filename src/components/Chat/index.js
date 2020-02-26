@@ -17,7 +17,7 @@ export default function Chat(props) {
   const [users, setUsers] = useState("");
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([]);
-  const END_POINT = process.env.REACT_APP_SERVER_ENDPOINT; //|| "localhost:5000"; // server port
+  const END_POINT = "http://157.245.254.43:3006"; //process.env.REACT_APP_SERVER_ENDPOINT; || "localhost:5000"; // server port
   const history = useHistory();
 
   useEffect(() => {

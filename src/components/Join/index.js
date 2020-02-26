@@ -32,44 +32,10 @@ export default function Join() {
         onClick={e => (!name || !room ? e.preventDefault() : null)}
         to={`/chat?name=${name}&room=${room}`}
       >
-        <Button className="button" type="submit" size="lg" color="primary">
+        <Button className="button" type="submit" size="lg" color="danger">
           Join
         </Button>
       </Link>
     </div>
   );
 }
-
-/**
- * 
- * <div className="joinOuterContainer">
-      <div className="joinInnerContainer">
-        <h1 className="heading">Create chat room</h1>
-
-        <div>
-          <input
-            placeholder="Name"
-            className="joinInput"
-            type="text"
-            onChange={e => setName(e.target.value)}
-          />
-        </div>
-        <div>
-          <input
-            placeholder="Room"
-            className="joinInput mt-20"
-            type="text"
-            onChange={e => setRoom(e.target.value)}
-          />
-        </div>
-        <Link
-          onClick={e => (!name || !room ? e.preventDefault() : null)}
-          to={`/chat?name=${name}&room=${room}`}
-        >
-          <button className="button mt-20" type="submit">
-            Sign In
-          </button>
-        </Link>
-      </div>
-    </div> 
- */
